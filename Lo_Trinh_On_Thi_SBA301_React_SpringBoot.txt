@@ -1,0 +1,249 @@
+================================================================================
+          LỘ TRÌNH 7 NGÀY TỰ HỌC REACTJS & TÍCH HỢP JAVA SPRING BOOT
+                       (ÔN THI PE / FE MÔN SBA301 - FPT UNIVERSITY)
+================================================================================
+
+I. TỔNG QUAN VÀ MỤC TIÊU LỘ TRÌNH
+--------------------------------------------------------------------------------
+Môn học SBA301 đòi hỏi sinh viên nắm vững cách xây dựng ứng dụng Web Full-stack:
+- Frontend: ReactJS (Single Page Application - SPA)
+- Backend: Java Spring Boot (RESTful API + Spring Data JPA)
+- Mục tiêu cuối cùng: Đạt điểm cao trong bài thi Practical Exam (PE) thông qua 
+  việc thành thạo các chức năng CRUD (Create, Read, Update, Delete) và tích hợp
+  truyền nhận dữ liệu mượt mà giữa Client và Server.
+
+Lộ trình được thiết kế dành cho người MỚI BẮT ĐẦU từ con số 0 với ReactJS.
+
+================================================================================
+II. CHI TIẾT LỘ TRÌNH 7 NGÀY
+================================================================================
+
+--------------------------------------------------------------------------------
+NGÀY 1: CÚ PHÁP JAVASCRIPT ES6 TRỌNG TÂM & TẠO PROJECT REACT
+--------------------------------------------------------------------------------
+* Mục tiêu: Nắm vững cú pháp JS hiện đại và khởi tạo môi trường React.
+* Kiến thức trọng tâm:
+  1. Arrow Functions: `const add = (a, b) => a + b;`
+  2. Destructuring: 
+     `const { id, name, price } = product;`
+     `const [first, second] = items;`
+  3. Xử lý Mảng (Array Methods):
+     - `.map()`: Dùng để duyệt danh sách và render HTML/JSX.
+     - `.filter()`: Dùng để lọc dữ liệu hoặc hỗ trợ xóa item khỏi danh sách.
+  4. Spread Operator (`...`): Sao chép mảng/object.
+* Thực hành:
+  - Cài đặt Node.js (phiên bản LTS).
+  - Khởi tạo project React bằng Vite (nhanh hơn Create React App):
+    Command: `npm create vite@latest frontend-app -- --template react`
+    Command: `cd frontend-app`
+    Command: `npm install`
+    Command: `npm run dev`
+  - Tạo Component đầu tiên và thử render danh sách cứng bằng `.map()`.
+finish 2/9 9h18.
+
+--------------------------------------------------------------------------------
+NGÀY 2: COMPONENT, PROPS, STATE (`useState`) & XỬ LÝ FORM
+--------------------------------------------------------------------------------
+* Mục tiêu: Hiểu cách quản lý trạng thái giao diện và thu thập dữ liệu input từ người dùng.
+* Kiến thức trọng tâm:
+  1. Component: Chia nhỏ giao diện thành các hàm trả về JSX (Header, Table, Form).
+  2. Props: Truyền dữ liệu từ Component cha xuống Component con.
+  3. `useState` Hook: Lưu trữ và cập nhật trạng thái của Component.
+     Cú pháp: `const [searchTerm, setSearchTerm] = useState('');`
+  4. Form Handling: Lấy dữ liệu từ các ô `<input>`, `<select>`, `<textarea>`.
+* Thực hành:
+  - Tạo Form thêm mới sản phẩm gồm các trường: Name, Price, Category, Status.
+  - Sử dụng object state để quản lý form:
+    `const [formData, setFormData] = useState({ name: '', price: 0, categoryId: '' });`
+  - Viết hàm `handleChange` dùng chung cho tất cả input trong form.
+  - Bắt sự kiện `onSubmit` của Form và ngăn load lại trang bằng `e.preventDefault()`.
+
+--------------------------------------------------------------------------------
+NGÀY 3: TẠO BACKEND RESTFUL API VỚI JAVA SPRING BOOT & CẤU HÌNH CORS
+--------------------------------------------------------------------------------
+* Mục tiêu: Dựng thành công Backend cung cấp API CRUD chuẩn RESTful và mở CORS.
+* Kiến thức trọng tâm:
+  1. Entity & Repository: Cấu hình Spring Data JPA kết nối DB (SQL Server / MySQL).
+  2. Controller Annotations: `@RestController`, `@RequestMapping("/api/v1/products")`.
+  3. HTTP Methods:
+     - `@GetMapping`: Lấy danh sách hoặc 1 chi tiết.
+     - `@PostMapping`: Tạo mới dữ liệu.
+     - `@PutMapping("/{id}")`: Cập nhật dữ liệu.
+     - `@DeleteMapping("/{id}")`: Xóa dữ liệu.
+  4. `@CrossOrigin`: Cho phép React (port 5173 / 3000) gọi API vào Spring Boot (port 8080).
+* Thực hành:
+  - Tạo Spring Boot project với các dependency: Web, JPA, Lombok, Driver DB.
+  - Viết Entity `Product` (id, name, price, status, category).
+  - Viết các endpoint CRUD hoàn chỉnh.
+  - THÊM ANNOTATION: `@CrossOrigin(origins = "*")` trên Controller class.
+
+--------------------------------------------------------------------------------
+NGÀY 4: TÍCH HỢP READ & CREATE (GET & POST API VỚI AXIOS)
+--------------------------------------------------------------------------------
+* Mục tiêu: Kết nối React với Spring Boot để tải danh sách và gửi form tạo mới dữ liệu.
+* Kiến thức trọng tâm:
+  1. Thư viện Axios: `npm install axios`
+  2. `useEffect` Hook: Tự động chạy code khi Component mount (chỉ định dependencies `[]`).
+  3. Luồng kết nối GET:
+     `useEffect` -> `axios.get(URL)` -> nhận dữ liệu -> `setData()` -> render `.map()`.
+  4. Luồng kết nối POST:
+     Submit form -> `axios.post(URL, formData)` -> thành công -> gọi lại hàm lấy danh sách (reload data).
+* Thực hành:
+  - Tạo file `api.js` cấu hình base Axios instance (baseURL: `http://localhost:8080/api`).
+  - Gọi API GET hiển thị danh sách sản phẩm lên bảng HTML/React.
+  - Gửi data từ Form React lên API POST để lưu vào database.
+
+--------------------------------------------------------------------------------
+NGÀY 5: TÍCH HỢP UPDATE & DELETE (PUT & DELETE API VỚI AXIOS)
+--------------------------------------------------------------------------------
+* Mục tiêu: Hoàn thiện 2 chức năng Xóa và Cập nhật dữ liệu.
+* Kiến thức trọng tâm:
+  1. Chức năng Xóa (DELETE):
+     - Click nút Xóa -> Hiện confirm dialog -> Gọi `axios.delete(`${URL}/${id}`)`.
+     - Sau khi xóa thành công: Gọi lại API GET hoặc filter bỏ item ra khỏi state.
+  2. Chức năng Sửa (UPDATE):
+     - Click nút "Sửa" trên 1 dòng -> Đưa dữ liệu item đó lên Form (`selectedProduct`).
+     - Submit form -> Gọi `axios.put(`${URL}/${id}`, formData)`.
+     - Xóa dữ liệu trên Form và tải lại bảng danh sách.
+* Thực hành:
+  - Làm nút "Delete" cạnh mỗi dòng sản phẩm, ấn vào xóa trực tiếp dưới DB.
+  - Làm nút "Edit" để đổ dữ liệu lên Form, cập nhật xong tự refresh lại bảng.
+
+--------------------------------------------------------------------------------
+NGÀY 6: CHỨC NĂNG BỔ TRỢ & HOÀN THIỆN UI/UX
+--------------------------------------------------------------------------------
+* Mục tiêu: Nắm chắc các câu hỏi nâng cao trong đề thi (Search, Filter, Validation).
+* Kiến thức trọng tâm:
+  1. Chức năng Tìm kiếm (Search by Name):
+     - Cách 1 (Frontend): Lọc mảng `products.filter(p => p.name.toLowerCase().includes(keyword.toLowerCase()))`.
+     - Cách 2 (Backend): Gọi API `GET /api/products?keyword=...`.
+  2. Form Validation:
+     - Kiểm tra không để trống ô input.
+     - Kiểm tra giá tiền phải > 0.
+     - Hiển thị thông báo lỗi bằng màu đỏ ngay bên dưới ô input.
+  3. Reset Form: Tạo hàm reset form về trạng thái rỗng sau khi Add/Edit thành công.
+
+--------------------------------------------------------------------------------
+NGÀY 7: MÔ PHỎNG THI THỬ PE SBA301 (THỜI GIAN: 180 PHÚT)
+--------------------------------------------------------------------------------
+* Mục tiêu: Đánh giá khả năng tự hoàn thành bài thi Full-stack dưới áp lực thời gian.
+* Bài tập thực hành:
+  Tự xây dựng bài toán "Quản lý Sinh viên" (Student Management) từ đầu:
+  - Backend (Spring Boot):
+    + Entity: Student (id, code, fullName, gpa, majorId).
+    + Viết đầy đủ các API: GET all, POST, PUT id, DELETE id, GET search.
+    + Nhớ mở `@CrossOrigin`.
+  - Frontend (React):
+    + Bảng hiển thị danh sách sinh viên.
+    + Ô Search sinh viên theo Tên hoặc Mã sinh viên.
+    + Form Thêm/Sửa sinh viên với validation cơ bản.
+    + Nút Xóa có xác nhận.
+
+================================================================================
+III. 3 QUY TẮC VÀNG VÀ SỰ CỐ THƯỜNG GẶP TRONG BÀI THI PE
+================================================================================
+
+1. LỖI CORS (Cross-Origin Resource Sharing)
+   - Triệu chứng: Console trình duyệt báo lỗi màu đỏ dạng "Access-Control-Allow-Origin".
+   - Khắc phục: Kiểm tra ngay Controller trong Spring Boot đã có `@CrossOrigin("*")` hay chưa.
+
+2. TRẠNG THÁI KHÔNG ĐỒNG BỘ GIAO DIỆN (UI STALE DATA)
+   - Triệu chứng: Thêm/Sửa/Xóa thành công ở database nhưng màn hình React không đổi.
+   - Khắc phục: Sau khi gọi API POST/PUT/DELETE thành công trong khối `.then()` 
+     hoặc sau `await`, luôn luôn gọi lại hàm `fetchData()` để lấy danh sách mới nhất.
+
+3. QUẢN LÝ THỜI GIAN LÀM BÀI
+   - Phân bổ: 45 phút cho Backend (DB + Spring Boot), 90 phút cho Frontend React, 
+     45 phút cho kiểm tra tính năng và fix bug.
+   - Chuẩn bị sẵn template project rỗng trước khi thi để không mất thời gian setup dependency.
+
+================================================================================
+IV. CODE MẪU CHUẨN ĐỂ THAM KHẢO VÀ HỌC THUỘC
+================================================================================
+
+--- 1. SPRING BOOT CONTROLLER PATTERN ---
+@RestController
+@RequestMapping("/api/v1/products")
+@CrossOrigin(origins = "*")
+public class ProductController {
+    @Autowired
+    private ProductRepository repo;
+
+    @GetMapping
+    public List<Product> getAll() {
+        return repo.findAll();
+    }
+
+    @PostMapping
+    public Product create(@RequestBody Product product) {
+        return repo.save(product);
+    }
+
+    @PutMapping("/{id}")
+    public Product update(@PathVariable Long id, @RequestBody Product product) {
+        product.setId(id);
+        return repo.save(product);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        repo.deleteById(id);
+    }
+}
+
+--- 2. REACT AXIOS FETCH & RENDER PATTERN ---
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+function ProductList() {
+    const [products, setProducts] = useState([]);
+
+    const loadProducts = async () => {
+        try {
+            const res = await axios.get('http://localhost:8080/api/v1/products');
+            setProducts(res.data);
+        } catch (error) {
+            console.error("Lỗi khi tải dữ liệu:", error);
+        }
+    };
+
+    useEffect(() => {
+        loadProducts();
+    }, []);
+
+    const handleDelete = async (id) => {
+        if (window.confirm("Bạn có chắc chắn muốn xóa?")) {
+            await axios.delete(`http://localhost:8080/api/v1/products/${id}`);
+            loadProducts(); // Load lại danh sách sau khi xóa
+        }
+    };
+
+    return (
+        <div>
+            <h2>Danh sách sản phẩm</h2>
+            <table>
+                <thead>
+                    <tr><th>ID</th><th>Tên</th><th>Giá</th><th>Hành động</th></tr>
+                </thead>
+                <tbody>
+                    {products.map(item => (
+                        <tr key={item.id}>
+                            <td>{item.id}</td>
+                            <td>{item.name}</td>
+                            <td>{item.price}</td>
+                            <td>
+                                <button onClick={() => handleDelete(item.id)}>Xóa</button>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    );
+}
+
+export default ProductList;
+
+================================================================================
+CHÚC BẠN ÔN LUYỆN TỐT VÀ ĐẠT ĐIỂM CAO MÔN SBA301!
+================================================================================
