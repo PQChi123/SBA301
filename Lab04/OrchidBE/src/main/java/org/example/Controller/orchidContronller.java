@@ -3,19 +3,20 @@ package org.example.Controller;
 import org.example.Entities.orchid;
 import org.example.Services.orchidServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/orchids")
 @CrossOrigin(origins = "*", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, RequestMethod.OPTIONS})
 public class orchidContronller {
     @Autowired
     orchidServices services;
 
-    @RequestMapping("/orchids")
-    @ResponseBody
+    @GetMapping
     public List<orchid> showOrchid(Model model) {
         List<orchid> list = services.findAll();
 
@@ -40,10 +41,29 @@ public class orchidContronller {
         //return "ListTour";
         return list;
     }
-    @DeleteMapping("orchids/{id}")
+    @DeleteMapping("/delete/{id}")
     public void deleteOrchid(@PathVariable("id") int id) {
         services.deleteOrchid(id);
     }
+
+    // API: GET http://localhost:8080/orchids/search?name=lan
+    @GetMapping("/search")
+    public ResponseEntity<List<orchid>> searchOrchids(@RequestParam("name") String name) {
+        List<orchid> result = services.searchByName(name);
+        return ResponseEntity.ok(result);
+    }
+    @PutMapping("/update/{id}")
+    public ResponseEntity<orchid> updateOrchid(@PathVariable("id") int id, @RequestBody orchid orchid) {
+        orchid.setId(id);
+        orchid result = services.saveOrchid(orchid);
+        return ResponseEntity.ok(result);
+    }
+    @PostMapping("/add")
+    public ResponseEntity<orchid> addOrchid(@RequestBody orchid orchid) {
+        orchid result = services.saveOrchid(orchid);
+        return ResponseEntity.ok(result);
+    }
+
 
 
 

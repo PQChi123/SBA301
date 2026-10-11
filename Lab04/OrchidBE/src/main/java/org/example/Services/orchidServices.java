@@ -43,4 +43,7 @@ public class orchidServices {
 
 
     }
+    public List<orchid> searchByName(String name) {
+        return orchidRepository.findByNameContainingIgnoreCase(name);
+    }
 }
