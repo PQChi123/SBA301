@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import { initialCategories } from '../services/mockData';
 import FeedbackMessage from '../components/FeedbackMessage';
-
+/**
+ * CHIPQce180289
+ *
+ */
 function Dashboard({ currentUser }) {
   // 1. Khởi tạo State: Ưu tiên lấy dữ liệu đã lưu trong localStorage, nếu chưa có thì dùng initialCategories
   const [categories, setCategories] = useState(() => {
@@ -20,6 +23,7 @@ function Dashboard({ currentUser }) {
   // 2. Tính toán số liệu tự động theo State
   const totalCategories = categories.length;
   const activeCategories = categories.filter((c) => checkIsActive(c)).length;
+  const sortedCategories = [...categories].sort((a, b) => Number(a.id) - Number(b.id));
 
   // 3. Hàm xử lý Khóa / Mở khóa Category
   const handleToggleStatus = (id) => {
@@ -110,7 +114,7 @@ function Dashboard({ currentUser }) {
             </tr>
           </thead>
           <tbody>
-            {categories.map((cat) => {
+            {sortedCategories.map((cat) => {
               const active = checkIsActive(cat);
               return (
                 <tr key={cat.id} style={{ borderBottom: '1px solid #eee' }}>

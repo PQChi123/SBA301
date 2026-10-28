@@ -1,5 +1,8 @@
 import { useState } from 'react';
-
+/**
+ * CHIPQce180289
+ *
+ */
 function SettingsPage({ currentUser }) {
   // State quản lý thông tin Profile
   const [profile, setProfile] = useState({

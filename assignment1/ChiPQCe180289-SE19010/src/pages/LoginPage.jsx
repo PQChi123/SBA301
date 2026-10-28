@@ -1,4 +1,8 @@
 import { useState } from 'react';
+/**
+ * CHIPQce180289
+ *
+ */
 export default function LoginPage({ onLoginSuccess }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');

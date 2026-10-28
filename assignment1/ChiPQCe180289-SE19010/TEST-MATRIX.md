@@ -43,3 +43,4 @@ Các ca dưới đây dùng để kiểm thử thủ công trên ứng dụng ch
 | STORE-01 | Storage - Normal | Dữ liệu tồn tại sau khi reload | Tạo hoặc cập nhật Category, News, User rồi tải lại trang. | Dữ liệu đã lưu trong localStorage vẫn còn sau khi tải lại. | Chưa chạy |
 | STORE-02 | Storage - Edge | Thiếu khóa localStorage | Xóa các khóa `categories`, `news`, `users` trong localStorage rồi mở lại ứng dụng. | Ứng dụng khởi tạo dữ liệu mặc định cho các khóa bị thiếu và không crash. | Chưa chạy |
 | STORE-03 | Storage - Edge | localStorage không ghi được | Chặn quyền ghi storage hoặc mô phỏng lỗi quota, sau đó lưu một thay đổi. | Hiển thị thông báo lỗi; giao diện không báo lưu thành công khi storage thất bại. | Chưa chạy |
+39 case

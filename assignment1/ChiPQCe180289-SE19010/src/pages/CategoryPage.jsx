@@ -3,6 +3,10 @@ import { initialCategories, initialNews } from '../services/mockData';
 import Modal from '../components/Modal';
 import FeedbackMessage from '../components/FeedbackMessage';
 
+/**
+ * CHIPQce180289
+ *
+ */
 function CategoryPage() {
   // Dùng chung dữ liệu category đã được DashboardPage cập nhật.
   const [categories, setCategories] = useState(() => {
@@ -119,7 +123,7 @@ function CategoryPage() {
   const normalizedSearch = searchTerm.trim().toLowerCase();
   const filteredCategories = categories.filter((cat) =>
     cat.name.toLowerCase().includes(normalizedSearch)
-  );
+  ).sort((a, b) => Number(a.id) - Number(b.id));
 return (
     <div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>

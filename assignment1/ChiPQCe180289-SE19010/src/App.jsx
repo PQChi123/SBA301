@@ -4,7 +4,10 @@ import AdminLayout from './layouts/AdminLayout'
 import './App.css'
 
 function App() {
-
+  /**
+   * CHIPQce180289
+   *
+   */
 const [currentUser, setCurrentUser] = useState(null);
 
   const handleLoginSuccess = (user) => {
