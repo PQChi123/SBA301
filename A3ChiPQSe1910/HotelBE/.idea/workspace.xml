@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BackgroundAgentGlobalSettings">
+    <option name="selectedModelId" value="auto" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="68eb5ef0-49e8-4853-9136-5789c2eac3f2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Lab04/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab04/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab04/OrchidBE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab04/OrchidBE/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab04/OrchidBE/target/classes/org/example/Controller/orchidContronller.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab04/OrchidBE/target/classes/org/example/Controller/orchidContronller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab04/OrchidBE/target/classes/org/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab04/OrchidBE/target/classes/org/example/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab04/OrchidBE/target/classes/org/example/Reponsitory/orchidReponsitory.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab04/OrchidBE/target/classes/org/example/Reponsitory/orchidReponsitory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab04/OrchidBE/target/classes/org/example/Services/orchidServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab04/OrchidBE/target/classes/org/example/Services/orchidServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assignment01/ChiPQCe180289-SE19010/src/components/FeedbackMessage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../assignment01/ChiPQCe180289-SE19010/src/components/FeedbackMessage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assignment01/ChiPQCe180289-SE19010/src/layouts/AdminLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../assignment01/ChiPQCe180289-SE19010/src/layouts/AdminLayout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assignment01/ChiPQCe180289-SE19010/src/pages/CategoryPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../assignment01/ChiPQCe180289-SE19010/src/pages/CategoryPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assignment01/ChiPQCe180289-SE19010/src/pages/LoginPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../assignment01/ChiPQCe180289-SE19010/src/pages/LoginPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assignment01/ChiPQCe180289-SE19010/src/pages/NewsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../assignment01/ChiPQCe180289-SE19010/src/pages/NewsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assignment01/ChiPQCe180289-SE19010/src/pages/SettingsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../assignment01/ChiPQCe180289-SE19010/src/pages/SettingsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assignment01/ChiPQCe180289-SE19010/src/pages/UserPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../assignment01/ChiPQCe180289-SE19010/src/pages/UserPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assignment01/ChiPQCe180289-SE19010/src/services/mockData.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../assignment01/ChiPQCe180289-SE19010/src/services/mockData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assignment1/ChiPQCe180289-SE19010/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../assignment1/ChiPQCe180289-SE19010/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assignment1/ChiPQCe180289-SE19010/src/components/FeedbackMessage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../assignment1/ChiPQCe180289-SE19010/src/components/FeedbackMessage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assignment1/ChiPQCe180289-SE19010/src/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../assignment1/ChiPQCe180289-SE19010/src/components/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assignment1/ChiPQCe180289-SE19010/src/components/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../assignment1/ChiPQCe180289-SE19010/src/components/Modal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assignment1/ChiPQCe180289-SE19010/src/components/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../assignment1/ChiPQCe180289-SE19010/src/components/Sidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assignment1/ChiPQCe180289-SE19010/src/layouts/AdminLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../assignment1/ChiPQCe180289-SE19010/src/layouts/AdminLayout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assignment1/ChiPQCe180289-SE19010/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../assignment1/ChiPQCe180289-SE19010/src/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assignment1/ChiPQCe180289-SE19010/src/pages/CategoryPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../assignment1/ChiPQCe180289-SE19010/src/pages/CategoryPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assignment1/ChiPQCe180289-SE19010/src/pages/DashboardPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../assignment1/ChiPQCe180289-SE19010/src/pages/DashboardPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assignment1/ChiPQCe180289-SE19010/src/pages/LoginPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../assignment1/ChiPQCe180289-SE19010/src/pages/LoginPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assignment1/ChiPQCe180289-SE19010/src/pages/NewsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../assignment1/ChiPQCe180289-SE19010/src/pages/NewsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assignment1/ChiPQCe180289-SE19010/src/pages/SettingsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../assignment1/ChiPQCe180289-SE19010/src/pages/SettingsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assignment1/ChiPQCe180289-SE19010/src/pages/UserPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../assignment1/ChiPQCe180289-SE19010/src/pages/UserPage.jsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_D:/SBA301/A3ChiPQSe1910/HotelBE" value="3Lh1Xk49jxLlDE8GPHjRID7OAQt" />
+    </persistenceIdMap>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package-info" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "PQChi123"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/PQChi123/SBA301.git",
+    "accountId": "52d7bd46-d951-4ffb-8306-cbfddc914cca"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0,
+  "fromUser": false
+}]]></component>
+  <component name="ProjectId" id="3LgqJwJqtcrwUfHZPGVoGDDe1ok" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectSessionTemplates">
+    <option name="panelTemplate">
+      <template>
+        <option name="modeId" value="Agent" />
+        <option name="model">
+          <model>
+            <option name="modelType" value="builtin_id" />
+            <option name="modelValue" value="auto" />
+          </model>
+        </option>
+        <option name="targetType" value="BACKGROUND" />
+        <option name="worktreeMode" value="WORKSPACE" />
+      </template>
+    </option>
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.HotelBE [compile].executor": "Run",
+    "Maven.HotelBE [install].executor": "Run",
+    "Maven.HotelBE [verify].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.Main.executor": "Run",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "copilot.chat.legacySessionMetadata.migrated": "true",
+    "git-widget-placeholder": "slot03",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "D:/SBA301/A3ChiPQSe1910/HotelBE/src/main/java/org/example/Main.java",
+    "settings.editor.selected.configurable": "com.aito.ass.toolkit.settings.CodeAssistSettingsConfigurable",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Spring Boot.Main">
+    <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="HotelBE" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.Main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Unnamed" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="HotelBE" />
+      <option name="SPRING_BOOT_MAIN_CLASS" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.Main" />
+      <item itemvalue="Spring Boot.Unnamed" />
+    </list>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.33813.55" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.33813.55" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="68eb5ef0-49e8-4853-9136-5789c2eac3f2" name="Changes" comment="" />
+      <created>1793886013223</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1793886013223</updated>
+      <workItem from="1793886016634" duration="8699000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
