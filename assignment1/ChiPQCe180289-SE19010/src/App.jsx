@@ -3,11 +3,10 @@ import LoginPage from './pages/LoginPage'
 import AdminLayout from './layouts/AdminLayout'
 import './App.css'
 
+/*
+* phạm quốc chí ce180289
+*/
 function App() {
-  /**
-   * CHIPQce180289
-   *
-   */
 const [currentUser, setCurrentUser] = useState(null);
 
   const handleLoginSuccess = (user) => {

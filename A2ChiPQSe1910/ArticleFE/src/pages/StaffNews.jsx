@@ -17,6 +17,7 @@ const StaffNews = () => {
 
     const [showModal, setShowModal] = useState(false);
     const [editingItem, setEditingItem] = useState(null);
+    const [notice, setNotice] = useState('');
     const [formData, setFormData] = useState({
         newsTitle: '', headline: '', newsContent: '', newsSource: '', categoryId: '', newsStatus: true, tagIds: []
     });
@@ -106,9 +107,19 @@ const StaffNews = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const requiredFields = ['newsTitle', 'headline', 'newsContent', 'newsSource'];
+        if (requiredFields.some((field) => !formData[field].trim())) {
+            alert('Vui lòng nhập đầy đủ tiêu đề, headline, nội dung và nguồn tin.');
+            return;
+        }
+
         try {
             const payload = {
                 ...formData,
+                newsTitle: formData.newsTitle.trim(),
+                headline: formData.headline.trim(),
+                newsContent: formData.newsContent.trim(),
+                newsSource: formData.newsSource.trim(),
                 createdById: user?.accountId,
                 updatedById: user?.accountId
             };
@@ -117,11 +128,16 @@ const StaffNews = () => {
                 await updateNewsArticle(editingItem.newsArticleId, payload);
             } else {
                 await createNewsArticle(payload);
+                setNotice('Đã tạo bài viết thành công.');
             }
             setShowModal(false);
             loadData();
         } catch (err) {
-            alert(err.response?.data || 'Có lỗi xảy ra khi lưu bài viết!');
+            const errors = err.response?.data?.errors;
+            const message = Array.isArray(errors)
+                ? errors.map((error) => `${error.field}: ${error.defaultMessage}`).join('\n')
+                : err.response?.data?.message;
+            alert(message || 'Có lỗi xảy ra khi lưu bài viết!');
         }
     };
 
@@ -150,6 +166,8 @@ const StaffNews = () => {
                     <button className="btn btn-primary" onClick={() => handleOpenModal()}>+ Tạo bài viết</button>
                 </div>
             </div>
+
+            {notice && <div className="alert alert-success" role="status">{notice}</div>}
 
             <div className="page-toolbar">
                 <form onSubmit={handleSearch} className="d-flex" style={{ maxWidth: '400px' }}>
@@ -215,11 +233,11 @@ const StaffNews = () => {
                                     </div>
                                     <div className="mb-2">
                                         <label>Headline</label>
-                                        <input className="form-control" value={formData.headline} onChange={(e) => setFormData({ ...formData, headline: e.target.value })} />
+                                        <input className="form-control" required value={formData.headline} onChange={(e) => setFormData({ ...formData, headline: e.target.value })} />
                                     </div>
                                     <div className="mb-2">
                                         <label>Nội Dung</label>
-                                        <textarea className="form-control" rows="4" value={formData.newsContent} onChange={(e) => setFormData({ ...formData, newsContent: e.target.value })}></textarea>
+                                        <textarea className="form-control" required rows="4" value={formData.newsContent} onChange={(e) => setFormData({ ...formData, newsContent: e.target.value })}></textarea>
                                     </div>
                                     <div className="row">
                                         <div className="col-md-6 mb-2">
@@ -231,7 +249,7 @@ const StaffNews = () => {
                                         </div>
                                         <div className="col-md-6 mb-2">
                                             <label>Nguồn Tin</label>
-                                            <input className="form-control" value={formData.newsSource} onChange={(e) => setFormData({ ...formData, newsSource: e.target.value })} />
+                                            <input className="form-control" required value={formData.newsSource} onChange={(e) => setFormData({ ...formData, newsSource: e.target.value })} />
                                         </div>
                                     </div>
                                     <div className="mb-2">

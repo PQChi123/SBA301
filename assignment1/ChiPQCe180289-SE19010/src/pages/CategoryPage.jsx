@@ -3,10 +3,9 @@ import { initialCategories, initialNews } from '../services/mockData';
 import Modal from '../components/Modal';
 import FeedbackMessage from '../components/FeedbackMessage';
 
-/**
- * CHIPQce180289
- *
- */
+/*
+* phạm quốc chí ce180289
+*/
 function CategoryPage() {
   // Dùng chung dữ liệu category đã được DashboardPage cập nhật.
   const [categories, setCategories] = useState(() => {
@@ -20,6 +19,8 @@ function CategoryPage() {
   const [feedback, setFeedback] = useState(null);
 
   const checkIsActive = (cat) => {
+    // kiểm tra underfined để biết có trường isActive.
+    // bước thực hiện kiểm tra isActive của category:
     if (typeof cat.isActive !== 'undefined') return Boolean(cat.isActive);
     if (typeof cat.status !== 'undefined') {
       return cat.status === 1 || cat.status === true || cat.status === 'Active';
@@ -121,6 +122,7 @@ function CategoryPage() {
   };
 
   const normalizedSearch = searchTerm.trim().toLowerCase();
+  // method đọc category tù localstroage
   const filteredCategories = categories.filter((cat) =>
     cat.name.toLowerCase().includes(normalizedSearch)
   ).sort((a, b) => Number(a.id) - Number(b.id));
@@ -156,6 +158,7 @@ return (
           </tr>
         </thead>
         <tbody>
+          // thực hiện lấy list category từ localstorage và hiển thị ra table + thực hiện check status, activety
           {filteredCategories.map((cat) => {
             const active = checkIsActive(cat);
             return (

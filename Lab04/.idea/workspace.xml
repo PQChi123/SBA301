@@ -5,17 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ac3b630-cec5-48d7-bc83-1f578acd4c93" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../ProjectSBA301/Restaurant-Reservation-Table-Optimization_BE" beforeDir="false" afterPath="$PROJECT_DIR$/../ProjectSBA301/Restaurant-Reservation-Table-Optimization_BE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../assignment1/ChiPQCe180289-SE19010/src/services/mockData.js" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment1/ChiPQCe180289-SE19010/src/services/mockData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrchidBE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/OrchidBE/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrchidBE/target/classes/org/example/Controller/orchidContronller.class" beforeDir="false" afterPath="$PROJECT_DIR$/OrchidBE/target/classes/org/example/Controller/orchidContronller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrchidBE/target/classes/org/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/OrchidBE/target/classes/org/example/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrchidBE/target/classes/org/example/Reponsitory/orchidReponsitory.class" beforeDir="false" afterPath="$PROJECT_DIR$/OrchidBE/target/classes/org/example/Reponsitory/orchidReponsitory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrchidBE/target/classes/org/example/Services/orchidServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/OrchidBE/target/classes/org/example/Services/orchidServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment01/ChiPQCe180289-SE19010/src/components/FeedbackMessage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment01/ChiPQCe180289-SE19010/src/components/FeedbackMessage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment01/ChiPQCe180289-SE19010/src/layouts/AdminLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment01/ChiPQCe180289-SE19010/src/layouts/AdminLayout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment01/ChiPQCe180289-SE19010/src/pages/CategoryPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment01/ChiPQCe180289-SE19010/src/pages/CategoryPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment01/ChiPQCe180289-SE19010/src/pages/LoginPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment01/ChiPQCe180289-SE19010/src/pages/LoginPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment01/ChiPQCe180289-SE19010/src/pages/NewsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment01/ChiPQCe180289-SE19010/src/pages/NewsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment01/ChiPQCe180289-SE19010/src/pages/SettingsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment01/ChiPQCe180289-SE19010/src/pages/SettingsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment01/ChiPQCe180289-SE19010/src/pages/UserPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment01/ChiPQCe180289-SE19010/src/pages/UserPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment01/ChiPQCe180289-SE19010/src/services/mockData.js" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment01/ChiPQCe180289-SE19010/src/services/mockData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment1/ChiPQCe180289-SE19010/src/pages/LoginPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment1/ChiPQCe180289-SE19010/src/pages/LoginPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="17" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;PQChi123&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/PQChi123/SBA301.git&quot;,
+    &quot;accountId&quot;: &quot;52d7bd46-d951-4ffb-8306-cbfddc914cca&quot;
+  }
+}</component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -32,40 +60,53 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="3KMWFR8YiNW0smSsL5NwYmmEzzq" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Spring Boot.Main.executor": "Run",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "com.aito.ass.toolkit.settings.CodeAssistSettingsConfigurable",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.Main.executor&quot;: &quot;Run&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;slot03&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/SBA301/Lab04&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
     <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="OrchidBE" />
@@ -93,7 +134,23 @@
       <workItem from="1791367817838" duration="15640000" />
       <workItem from="1791425106130" duration="254000" />
       <workItem from="1791434713966" duration="343000" />
-      <workItem from="1791728968393" duration="344000" />
+      <workItem from="1791728968393" duration="915000" />
+      <workItem from="1791778681251" duration="275000" />
+      <workItem from="1791781808538" duration="906000" />
+      <workItem from="1791782877588" duration="848000" />
+      <workItem from="1791785313664" duration="78000" />
+      <workItem from="1791803895991" duration="7654000" />
+      <workItem from="1791858866261" duration="611000" />
+      <workItem from="1793285539165" duration="2660000" />
+      <workItem from="1793322708368" duration="1835000" />
+      <workItem from="1793335110877" duration="593000" />
+      <workItem from="1793340466520" duration="114000" />
+      <workItem from="1793361449289" duration="568000" />
+      <workItem from="1793442304300" duration="1190000" />
+      <workItem from="1793451684015" duration="591000" />
+      <workItem from="1793466992054" duration="580000" />
+      <workItem from="1793587268044" duration="3000" />
+      <workItem from="1793589067301" duration="2848000" />
     </task>
     <servers />
   </component>

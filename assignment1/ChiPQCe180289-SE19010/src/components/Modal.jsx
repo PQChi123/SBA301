@@ -1,3 +1,6 @@
+/*
+* phạm quốc chí ce180289
+*/
 function Modal({ title, onClose, width = '480px', children }) {
   return (
     <div

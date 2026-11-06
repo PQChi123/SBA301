@@ -1,0 +1,18 @@
+package org.example.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
+public record CategoryRequest(
+        @NotBlank(message = "Category name is required")
+        @Size(max = 100, message = "Category name must not exceed 100 characters")
+        String categoryName,
+
+        @NotBlank(message = "Description is required")
+        @Size(max = 250, message = "Description must not exceed 250 characters")
+        String categoryDescription,
+
+        Short parentCategoryId,
+
+        Boolean active
+) {}

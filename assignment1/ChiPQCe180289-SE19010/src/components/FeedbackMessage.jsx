@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 
+/*
+* phạm quốc chí ce180289
+*/
 function FeedbackMessage({ message }) {
   const [dismissedMessage, setDismissedMessage] = useState(null);
 

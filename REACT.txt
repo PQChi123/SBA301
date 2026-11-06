@@ -1,0 +1,6 @@
+  1.const [tours, setTours] = useState([]);
+tours là biến Đọc chỉ dùng cho các theo tác in ra màn hình find, sort.
+setTours liên quan đến các vấn đề dẫn đến thay đổi dữ liệu.
+  2. 2 Hooks cơ bản của react 
+   UsesEffect: dùng các hoạt động tự đông như là gọi API, lắng nghe các sự kiện
+   userState : dùng đẻ cập nhật, và lưu trữ dữ liệu

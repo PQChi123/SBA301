@@ -7,6 +7,9 @@ import NewsPage from '../pages/NewsPage';
 import UserPage from '../pages/UserPage';
 import SettingsPage from '../pages/SettingsPage';
 // Tạm thời tạo khung chữ cho các trang chưa làm
+/*
+* phạm quốc chí ce180289
+*/
 function AdminLayout({ currentUser, onLogout }) {
 
   const [activeTab, setActiveTab] = useState('categories');

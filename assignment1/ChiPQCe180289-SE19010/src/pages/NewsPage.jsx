@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { initialNews, initialCategories } from '../services/mockData';
 import FeedbackMessage from '../components/FeedbackMessage';
-/**
- * CHIPQce180289
- *
- */
 
+/*
+* phạm quốc chí ce180289
+*/
 function NewsPage({ currentUser }) {
   const [categories] = useState(() => {
     const saved = localStorage.getItem('categories');
@@ -15,14 +14,18 @@ function NewsPage({ currentUser }) {
   const [newsList, setNewsList] = useState(() => {
     const saved = localStorage.getItem('news');
     const source = saved ? JSON.parse(saved) : initialNews;
-
+//Tìm và gán categoryId - đúng như bạn nói
+// Normalize author field - đảm bảo luôn có giá trị (author → createdBy → '')
+// Normalize status field - chuyển về 'Published' hoặc 'Draft'
     return source.map((item) => {
       const category = categories.find(
         (candidate) => Number(candidate.id) === Number(item.categoryId)
       ) || categories.find((candidate) => candidate.name === item.categoryName);
 
       return {
+        //spread operator đo
         ...item,
+        // nếu category ko tồn tại dùng ID của category đầu tiên để gán.
         categoryId: category?.id ?? categories[0]?.id ?? null,
         author: item.author || item.createdBy || '',
         status: item.status === 'Published' || Number(item.status) === 1 ? 'Published' : 'Draft'

@@ -1,4 +1,8 @@
 // 1. Bảng USERS (2 đối tượng: 1 Admin, 1 Staff)
+
+/*
+   Phạm Quốc Chí Ce180289
+ */
 export const initialUsers = [
   {
     id: 1,
@@ -69,4 +73,5 @@ export const initialNews = [
     createdBy: "staff1",
     status: 0
   }
+
 ];

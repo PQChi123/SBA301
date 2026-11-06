@@ -1,3 +1,6 @@
+/*
+* Phạm Quốc Chí Ce180289
+*/
 import { useState } from 'react'
 import './App.css'
 import AuthPage from './pages/AuthPage.jsx'

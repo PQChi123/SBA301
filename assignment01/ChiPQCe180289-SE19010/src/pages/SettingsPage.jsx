@@ -1,7 +1,6 @@
 import { useState } from 'react';
-/**
- * CHIPQce180289
- *
+/*
+   Phạm Quốc Chí Ce180289
  */
 function SettingsPage({ currentUser }) {
   // State quản lý thông tin Profile

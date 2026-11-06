@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { initialCategories } from '../services/mockData';
 import FeedbackMessage from '../components/FeedbackMessage';
-/**
- * CHIPQce180289
- *
- */
+/*
+* phạm quốc chí ce180289
+*/
 function Dashboard({ currentUser }) {
   // 1. Khởi tạo State: Ưu tiên lấy dữ liệu đã lưu trong localStorage, nếu chưa có thì dùng initialCategories
   const [categories, setCategories] = useState(() => {

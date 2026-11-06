@@ -1,8 +1,8 @@
 import { useState } from 'react';
-/**
- * CHIPQce180289
- *
- */
+import { initialUsers } from '../services/mockData';
+/*
+* phạm quốc chí ce180289
+*/
 export default function LoginPage({ onLoginSuccess }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -16,12 +16,42 @@ export default function LoginPage({ onLoginSuccess }) {
       return;
     }
 
-    if (normalizedUsername === 'admin' && password === 'Admin') {
-      onLoginSuccess({ username: 'Admin', role: 1 });
+    const savedUsers = localStorage.getItem('users');
+    const users = savedUsers ? JSON.parse(savedUsers) : initialUsers;
+    const storedAccount = users.find(
+      (item) => item.username?.trim().toLowerCase() === normalizedUsername
+    );
+    const storedUser = users.find(
+      (item) =>
+        item.username?.trim().toLowerCase() === normalizedUsername &&
+        item.password === password
+    );
+    const sampleUser = initialUsers.find(
+      (item) =>
+        item.username.toLowerCase() === normalizedUsername &&
+        item.password === password
+    );
+    const user = storedUser || (sampleUser && storedAccount) || sampleUser;
+
+    if (!user) {
+      setError('Username hoặc password không đúng.');
       return;
     }
 
-    setError('Invalid username or password.');
+    const account = storedAccount || user;
+    const isActive =
+      Number(account.status) === 1 || account.status === true || account.status === 'Active';
+    if (!isActive) {
+      setError('Tài khoản đã bị khóa.');
+      return;
+    }
+
+    onLoginSuccess({
+      id: account.id,
+      username: account.username,
+      role: Number(account.role),
+      email: account.email
+    });
   };
 
   return (

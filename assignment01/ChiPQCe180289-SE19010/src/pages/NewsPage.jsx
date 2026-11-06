@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { initialNews, initialCategories } from '../services/mockData';
 import FeedbackMessage from '../components/FeedbackMessage';
-/**
- * CHIPQce180289
- *
+/*
+   Phạm Quốc Chí Ce180289
  */
 
 function NewsPage({ currentUser }) {

@@ -3,10 +3,10 @@ import { initialCategories, initialNews } from '../services/mockData';
 import Modal from '../components/Modal';
 import FeedbackMessage from '../components/FeedbackMessage';
 
-/**
- * CHIPQce180289
- *
- */
+  /*
+     Phạm Quốc Chí Ce180289
+  */
+
 function CategoryPage() {
   // Dùng chung dữ liệu category đã được DashboardPage cập nhật.
   const [categories, setCategories] = useState(() => {

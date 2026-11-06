@@ -94,7 +94,10 @@ const StaffCategories = () => {
                 item.categoryId === updated.categoryId ? updated : item
             ));
             setNotice(`Đã ${updated.isActive ? 'bật' : 'tắt'} danh mục "${updated.categoryName}".`);
+
+
         } catch (err) {
+            //Nếu có lỗi A thì dùng A, không có A thì tìm B, không có B thì dùng câu mặc định C, cuối cùng bật hộp thoại alert() lên."
             alert(err.response?.data?.message || err.response?.data || 'Không thể cập nhật trạng thái danh mục.');
         } finally {
             setUpdatingStatusId(null);

@@ -1,3 +1,6 @@
+/*
+* Phạm Quốc Chí Ce180289
+*/
 import { useEffect, useState } from 'react'
 import HotelTable from '../components/hotelTable.jsx'
 import { getAllList, getApiError } from '../service/hotelServiceAPI.js'
