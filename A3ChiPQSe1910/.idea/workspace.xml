@@ -8,8 +8,77 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe973181-88e0-4542-95ce-4b192627bd57" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/HotelBE/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/postman/HotelBooking.local.postman_environment.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/postman/HotelBooking.postman_collection.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/controller/ApiExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/controller/BookingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/controller/RoomController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/controller/RoomTypeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/dto/request/BookingRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/dto/request/BookingRoomRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/dto/request/BookingStatusRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/dto/request/CustomerRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/dto/request/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/dto/request/RegisterRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/dto/request/RoomRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/dto/response/BookingDetailResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/dto/response/BookingResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/dto/response/CustomerResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/dto/response/JwtResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/dto/response/RoomResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/dto/response/RoomTypeResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/entity/BookingDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/entity/BookingReservation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/entity/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/entity/RoomInformation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/entity/RoomType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/exception/NotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/repository/BookingDetailRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/repository/BookingReservationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/repository/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/repository/RoomInformationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/repository/RoomTypeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/security/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/security/JwtService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/service/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/service/BookingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/service/RoomService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/java/org/example/service/RoomTypeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelBE/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelFE/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelFE/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelFE/eslint.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelFE/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelFE/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelFE/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelFE/public/favicon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelFE/public/icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelFE/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelFE/src/App.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelFE/src/assets/hero.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelFE/src/assets/react.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelFE/src/assets/vite.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelFE/src/components/hotelTable.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelFE/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelFE/src/main.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelFE/src/pages/AuthPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelFE/src/pages/CustomerPages.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelFE/src/pages/StaffPages.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelFE/src/pages/hotelPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelFE/src/service/hotelServiceAPI.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelFE/vite.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../A2ChiPQSe1910/ArticleFE/src/pages/StaffCategories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../A2ChiPQSe1910/ArticleFE/src/pages/StaffCategories.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../A2ChiPQSe1910/ArticleFE/src/pages/StaffNews.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../A2ChiPQSe1910/ArticleFE/src/pages/StaffNews.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HotelFE/dist/assets/index-B0BIQeud.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HotelFE/dist/assets/index-BFNlp8qb.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab04/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab04/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab04/OrchidBE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab04/OrchidBE/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab04/OrchidBE/target/classes/org/example/Controller/orchidContronller.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab04/OrchidBE/target/classes/org/example/Controller/orchidContronller.class" afterDir="false" />
@@ -72,7 +141,7 @@
   <component name="ProjectSessionTemplates">
     <option name="panelTemplate">
       <template>
-        <option name="modeId" value="Ask" />
+        <option name="modeId" value="Agent" />
         <option name="model">
           <model>
             <option name="modelType" value="builtin_id" />
@@ -110,6 +179,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "editor.preferences.completion",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
@@ -141,6 +213,7 @@
       <updated>1793895149595</updated>
       <workItem from="1793895150991" duration="7134000" />
       <workItem from="1793951544693" duration="3365000" />
+      <workItem from="1793955633549" duration="343000" />
     </task>
     <servers />
   </component>

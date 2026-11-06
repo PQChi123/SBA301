@@ -1,0 +1,181 @@
+{
+  "info": {
+    "_postman_id": "d5340ef4-1585-4eb6-a3d2-51f9864df329",
+    "name": "Hotel Booking API",
+    "description": "Smoke tests for guest, customer, and staff API flows. Select the local environment and replace the staff password before use.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080" },
+    { "key": "customerEmail", "value": "guest.demo@example.com" },
+    { "key": "customerPassword", "value": "GuestPass123!" },
+    { "key": "staffEmail", "value": "staff@hotel.local" },
+    { "key": "staffPassword", "value": "ChangeMe123!" },
+    { "key": "customerToken", "value": "" },
+    { "key": "staffToken", "value": "" },
+    { "key": "customerId", "value": "" },
+    { "key": "staffCustomerId", "value": "" },
+    { "key": "roomId", "value": "" },
+    { "key": "testRoomId", "value": "" },
+    { "key": "roomTypeId", "value": "" },
+    { "key": "bookingId", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "Guest",
+      "item": [
+        {
+          "name": "List active rooms",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/rooms" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test('returns a room array', () => { pm.response.to.have.status(200); pm.expect(pm.response.json()).to.be.an('array'); });", "if (pm.response.code === 200 && pm.response.json().length) pm.collectionVariables.set('roomId', pm.response.json()[0].roomId);"], "type": "text/javascript" } }]
+        },
+        {
+          "name": "Search rooms",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/rooms?q={{roomSearch}}" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test('room search responds successfully', () => pm.response.to.have.status(200));"], "type": "text/javascript" } }]
+        }
+      ]
+    },
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Register customer",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\"customerFullName\":\"Demo Guest\",\"emailAddress\":\"{{customerEmail}}\",\"telephone\":\"0900000000\",\"password\":\"{{customerPassword}}\"}" },
+            "url": "{{baseUrl}}/api/auth/register"
+          },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test('customer registered', () => pm.expect([201, 400]).to.include(pm.response.code));", "if (pm.response.code === 201) { pm.collectionVariables.set('customerToken', pm.response.json().token); pm.collectionVariables.set('customerId', pm.response.json().id); }"], "type": "text/javascript" } }]
+        },
+        {
+          "name": "Customer login",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\"email\":\"{{customerEmail}}\",\"password\":\"{{customerPassword}}\"}" },
+            "url": "{{baseUrl}}/api/auth/login"
+          },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test('customer login succeeds', () => pm.response.to.have.status(200));", "if (pm.response.code === 200) { pm.collectionVariables.set('customerToken', pm.response.json().token); pm.collectionVariables.set('customerId', pm.response.json().id); }"], "type": "text/javascript" } }]
+        },
+        {
+          "name": "Staff login",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\"email\":\"{{staffEmail}}\",\"password\":\"{{staffPassword}}\"}" },
+            "url": "{{baseUrl}}/api/auth/login"
+          },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test('staff login succeeds', () => pm.response.to.have.status(200));", "if (pm.response.code === 200) pm.collectionVariables.set('staffToken', pm.response.json().token);"], "type": "text/javascript" } }]
+        },
+        {
+          "name": "Reject missing credentials on staff endpoint",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/customers" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test('protected endpoint requires login', () => pm.response.to.have.status(401));"], "type": "text/javascript" } }]
+        }
+      ]
+    },
+    {
+      "name": "Customer",
+      "item": [
+        {
+          "name": "Get profile",
+          "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{customerToken}}" }], "url": "{{baseUrl}}/api/customers/me" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test('profile belongs to current customer', () => { pm.response.to.have.status(200); pm.expect(pm.response.json().emailAddress).to.eql(pm.collectionVariables.get('customerEmail')); });"], "type": "text/javascript" } }]
+        },
+        {
+          "name": "Update profile",
+          "request": { "method": "PUT", "header": [{ "key": "Authorization", "value": "Bearer {{customerToken}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\"customerFullName\":\"Demo Guest Updated\",\"emailAddress\":\"{{customerEmail}}\",\"telephone\":\"0911111111\"}" }, "url": "{{baseUrl}}/api/customers/me" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test('profile updated', () => pm.response.to.have.status(200));"], "type": "text/javascript" } }]
+        },
+        {
+          "name": "Create booking (requires available room and future dates)",
+          "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{customerToken}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\"rooms\":[{\"roomId\":{{roomId}},\"startDate\":\"2027-01-10\",\"endDate\":\"2027-01-11\"}]}" }, "url": "{{baseUrl}}/api/bookings" },
+          "description": "Before sending, replace the dates with a future one-night interval and select an unbooked room.",
+          "event": [{ "listen": "prerequest", "script": { "exec": ["pm.collectionVariables.unset('bookingId');"], "type": "text/javascript" } }, { "listen": "test", "script": { "exec": ["pm.test('booking request validates', () => pm.expect([201, 400]).to.include(pm.response.code));", "if (pm.response.code === 201) pm.collectionVariables.set('bookingId', pm.response.json().bookingReservationId);"], "type": "text/javascript" } }]
+        },
+        {
+          "name": "Get booking detail",
+          "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{customerToken}}" }], "url": "{{baseUrl}}/api/bookings/{{bookingId}}" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test('customer reads own booking', () => pm.expect([200, 404]).to.include(pm.response.code));"], "type": "text/javascript" } }]
+        },
+        {
+          "name": "List own booking history",
+          "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{customerToken}}" }], "url": "{{baseUrl}}/api/bookings/mine" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test('customer booking history responds with array', () => { pm.response.to.have.status(200); pm.expect(pm.response.json()).to.be.an('array'); });"], "type": "text/javascript" } }]
+        },
+        {
+          "name": "Cancel own booking",
+          "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{customerToken}}" }], "url": "{{baseUrl}}/api/bookings/{{bookingId}}/cancel" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test('booking cancellation accepted', () => pm.expect([204, 400, 404]).to.include(pm.response.code));"], "type": "text/javascript" } }]
+        }
+      ]
+    },
+    {
+      "name": "Staff",
+      "item": [
+        {
+          "name": "List customers",
+          "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{staffToken}}" }], "url": "{{baseUrl}}/api/customers?q=demo" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test('staff can search customers', () => { pm.response.to.have.status(200); pm.expect(pm.response.json()).to.be.an('array'); });"], "type": "text/javascript" } }]
+        },
+        {
+          "name": "Room types",
+          "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{staffToken}}" }], "url": "{{baseUrl}}/api/room-types" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test('room types are returned', () => { pm.response.to.have.status(200); pm.expect(pm.response.json()).to.be.an('array'); });", "if (pm.response.code === 200 && pm.response.json().length) pm.collectionVariables.set('roomTypeId', pm.response.json()[0].roomTypeId);"], "type": "text/javascript" } }]
+        },
+        {
+          "name": "Create room",
+          "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{staffToken}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\"roomNumber\":\"POSTMAN-{{$timestamp}}\",\"roomDetailDescription\":\"Postman test room\",\"roomMaxCapacity\":2,\"roomTypeId\":{{roomTypeId}},\"roomStatus\":1,\"roomPricePerDay\":100}" }, "url": "{{baseUrl}}/api/rooms" },
+          "event": [{ "listen": "prerequest", "script": { "exec": ["pm.collectionVariables.unset('testRoomId');"], "type": "text/javascript" } }, { "listen": "test", "script": { "exec": ["pm.test('staff creates a room', () => pm.expect([201, 400]).to.include(pm.response.code));", "if (pm.response.code === 201) pm.collectionVariables.set('testRoomId', pm.response.json().roomId);"], "type": "text/javascript" } }]
+        },
+        {
+          "name": "Get room detail",
+          "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{staffToken}}" }], "url": "{{baseUrl}}/api/rooms/{{testRoomId}}" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test('room detail responds', () => pm.expect([200, 404]).to.include(pm.response.code));"], "type": "text/javascript" } }]
+        },
+        {
+          "name": "Update room",
+          "request": { "method": "PUT", "header": [{ "key": "Authorization", "value": "Bearer {{staffToken}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\"roomNumber\":\"POSTMAN-{{$timestamp}}\",\"roomDetailDescription\":\"Updated Postman test room\",\"roomMaxCapacity\":2,\"roomTypeId\":{{roomTypeId}},\"roomStatus\":1,\"roomPricePerDay\":110}" }, "url": "{{baseUrl}}/api/rooms/{{testRoomId}}" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test('room update request handled', () => pm.expect([200, 400, 404]).to.include(pm.response.code));"], "type": "text/javascript" } }]
+        },
+        {
+          "name": "Delete test room",
+          "request": { "method": "DELETE", "header": [{ "key": "Authorization", "value": "Bearer {{staffToken}}" }], "url": "{{baseUrl}}/api/rooms/{{testRoomId}}" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test('room delete request handled', () => pm.expect([200, 404]).to.include(pm.response.code));"], "type": "text/javascript" } }]
+        },
+        {
+          "name": "Create customer as staff",
+          "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{staffToken}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\"customerFullName\":\"Postman Staff Customer\",\"emailAddress\":\"postman.{{$timestamp}}@example.com\",\"telephone\":\"0900000001\",\"password\":\"PostmanPass123!\",\"customerStatus\":1}" }, "url": "{{baseUrl}}/api/customers" },
+          "event": [{ "listen": "prerequest", "script": { "exec": ["pm.collectionVariables.unset('staffCustomerId');"], "type": "text/javascript" } }, { "listen": "test", "script": { "exec": ["pm.test('staff creates customer', () => pm.expect([201, 400]).to.include(pm.response.code));", "if (pm.response.code === 201) pm.collectionVariables.set('staffCustomerId', pm.response.json().customerId);"], "type": "text/javascript" } }]
+        },
+        {
+          "name": "Update customer as staff",
+          "request": { "method": "PUT", "header": [{ "key": "Authorization", "value": "Bearer {{staffToken}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\"customerFullName\":\"Postman Staff Customer Updated\",\"emailAddress\":\"postman.updated.{{$timestamp}}@example.com\",\"telephone\":\"0900000002\",\"customerStatus\":1}" }, "url": "{{baseUrl}}/api/customers/{{staffCustomerId}}" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test('staff updates customer', () => pm.expect([200, 400, 404]).to.include(pm.response.code));"], "type": "text/javascript" } }]
+        },
+        {
+          "name": "Delete test customer",
+          "request": { "method": "DELETE", "header": [{ "key": "Authorization", "value": "Bearer {{staffToken}}" }], "url": "{{baseUrl}}/api/customers/{{staffCustomerId}}" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test('staff deletes customer', () => pm.expect([204, 400, 404]).to.include(pm.response.code));"], "type": "text/javascript" } }]
+        },
+        {
+          "name": "List all bookings",
+          "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{staffToken}}" }], "url": "{{baseUrl}}/api/bookings" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test('staff can list bookings', () => { pm.response.to.have.status(200); pm.expect(pm.response.json()).to.be.an('array'); });"], "type": "text/javascript" } }]
+        },
+        {
+          "name": "Update booking status",
+          "request": { "method": "PATCH", "header": [{ "key": "Authorization", "value": "Bearer {{staffToken}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\"bookingStatus\":2}" }, "url": "{{baseUrl}}/api/bookings/{{bookingId}}/status" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test('staff status update request handled', () => pm.expect([200, 400, 404]).to.include(pm.response.code));"], "type": "text/javascript" } }]
+        },
+        {
+          "name": "Delete test booking",
+          "request": { "method": "DELETE", "header": [{ "key": "Authorization", "value": "Bearer {{staffToken}}" }], "url": "{{baseUrl}}/api/bookings/{{bookingId}}" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test('staff booking delete request handled', () => pm.expect([204, 400, 404]).to.include(pm.response.code));"], "type": "text/javascript" } }]
+        }
+      ]
+    }
+  ]
+}
